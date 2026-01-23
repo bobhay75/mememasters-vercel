@@ -1,0 +1,33 @@
+modules = ["postgresql-16"]
+[agent]
+integrations = ["javascript_openai==1.0.0"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
+run = ["npm", "run", "start"]
+openUrl = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["nodejs"]
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Start Server"
+mode = "sequential"
+author = 41052465
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node stable-server.js"
