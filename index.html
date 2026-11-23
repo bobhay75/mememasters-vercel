@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Create and download your own memes privately in your browser. No signup, upload, tracking, or AI credits.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>MemeMasters Studio | Create your own meme</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#editor">Skip to meme editor</a>
+  <header class="site-header">
+    <div class="shell header-content">
+      <a class="brand" href="./" aria-label="MemeMasters home"><span class="brand-mark" aria-hidden="true">MM</span><span>Meme<span class="brand-accent">Masters</span></span></a>
+      <a class="header-link" href="https://bobsome1.com/services/" target="_blank" rel="noopener noreferrer">Built by Bobsome1 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> YOUR CREATIVE WORKSPACE · FREE BROWSER EDITOR</p>
+      <h1 id="page-title">Your idea. <span>Your punchline.</span><br>Your meme.</h1>
+      <p class="intro-copy">Turn your own photo into a shareable PNG. Edit the captions, choose your crop, and take the finished image with you. No account, no surprise fees, and no upload to our servers.</p>
+      <p class="intro-proof">No paid AI claims · No made-up galleries · Your image stays on your device</p>
+    </section>
+    <section class="editor-grid" id="editor" aria-label="Meme editor">
+      <section class="controls-card" aria-labelledby="controls-heading">
+        <div class="panel-heading">
+          <div><p class="step-label">01 / CREATE</p><h2 id="controls-heading">Make something worth sharing.</h2></div>
+          <span class="live-pill">LOCAL EDITOR</span>
+        </div>
+        <div class="field upload-field">
+          <label for="photo">Your image</label>
+          <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="upload-help file-selection">
+          <p id="upload-help" class="help">JPG, PNG, or WebP · Maximum 12 MB. You can also start with our gradient background.</p>
+          <p id="file-selection" class="selected-file">No image selected — the built-in gradient is shown.</p>
+        </div>
+        <div class="field">
+          <label for="top-caption">Top caption</label>
+          <input id="top-caption" name="top-caption" type="text" value="YOUR IDEA" maxlength="100" autocomplete="off" spellcheck="true" placeholder="Set up the joke">
+        </div>
+        <div class="field">
+          <label for="bottom-caption">Bottom caption</label>
+          <input id="bottom-caption" name="bottom-caption" type="text" value="YOUR MEME" maxlength="100" autocomplete="off" spellcheck="true" placeholder="Deliver the punchline">
+        </div>
+        <div class="settings-grid">
+          <div class="field">
+            <label for="font-size">Text size</label>
+            <input id="font-size" name="font-size" type="range" min="26" max="100" step="2" value="68" aria-describedby="font-hint">
+            <p class="help" id="font-hint">Adjust to fit your words.</p>
+          </div>
+          <div class="field">
+            <label for="image-fit">Photo framing</label>
+            <select id="image-fit" name="image-fit">
+              <option value="cover">Fill frame</option>
+              <option value="contain">Show full image</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="canvas-size">Image format</label>
+            <select id="canvas-size" name="canvas-size">
+              <option value="square">Square · 1080 × 1080</option>
+              <option value="portrait">Portrait · 1080 × 1350</option>
+            </select>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="download-button" id="download" type="button">Download PNG <span aria-hidden="true">↓</span></button>
+          <button class="secondary-button" id="reset" type="button">Reset</button>
+        </div>
+        <p id="editor-status" class="status" role="status" aria-live="polite">Preparing your editor…</p>
+        <p class="fine-print">No data is saved to this site. Your browser handles rendering and downloading. We don't process payments or claim AI-generated images in this editor.</p>
+      </section>
+      <section class="preview-card" aria-labelledby="preview-heading">
+        <div class="preview-top"><div><p class="step-label">02 / PREVIEW</p><h2 id="preview-heading">The finished frame.</h2></div><span class="preview-label">LIVE</span></div>
+        <div class="canvas-surround"><canvas id="meme-preview" width="1080" height="1080" role="img" aria-label="Live preview of your meme with uploaded image and captions">Your browser needs Canvas support for image editing.</canvas></div>
+        <div class="preview-foot"><span>Black-outline meme typography</span><span>Full-resolution PNG export</span></div>
+      </section>
+    </section>
+    <section class="afterword" aria-labelledby="afterword-title">
+      <div><p class="step-label">THE NEXT STEP</p><h2 id="afterword-title">Need more than a meme?</h2><p>Bobsome1 builds websites, media, and working digital tools for businesses with real problems to solve.</p></div>
+      <a class="text-link" href="https://bobsome1.com/services/" target="_blank" rel="noopener noreferrer">Explore Media + IT <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-content"><span>MemeMasters Studio · An independent Bobsome1 experiment</span><span>Free local editor · No sign-up or tracking</span></div></footer>
+  <noscript><p class="no-script">Enable JavaScript in your browser to use the local meme editor. No external service is contacted.</p></noscript>
+</body>
+</html>
