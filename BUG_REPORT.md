@@ -19,7 +19,7 @@ Found 5 critical bugs in the codebase. 4 have been fixed, 1 requires complete te
 **Issue**: Hardcoded credentials in plain text
 ```html
 <input type="email" placeholder="Email" id="email" value="thebobsomest1@gmail.com">
-<input type="password" placeholder="Password" id="password" value="Hayes5000#$$#">
+<input type="password" placeholder="Password" id="password" value="[REDACTED — credential must be rotated]">
 ```
 **Fix Applied**: Removed hardcoded values
 ```html
